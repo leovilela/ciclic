@@ -1,4 +1,3 @@
-import imgDefault from "~/assets/images/images.png";
 
 export default () => ({
   listagem: [

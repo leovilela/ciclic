@@ -56,9 +56,9 @@ $font-family-sans-serif: 'Roboto', sans-serif !default;
 }
 
 @mixin inputDefault() {
-    border: 1px solid $redDark;
+    border: 1px solid #324b68;
     @include border-radius(5px);
-    color: $redDark;
+    color: #324b68;
     width: 100%;
     font-family: $font-family-sans-serif;
     font-size: $fontSizeDefault;

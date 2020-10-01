@@ -2,7 +2,10 @@
   <div  class="container-fluid">
     <div>
       <div class="row justify-content-center">
-        <FormPedido class="formPedido"></FormPedido>
+        <LogoPrincipal width=150 height=50></LogoPrincipal>
+      </div> 
+      <div class="row justify-content-center">
+        <formulario class="formulario"></formulario>
       </div>     
 
     </div>
@@ -13,7 +16,7 @@
 <script>
 import { mapState } from "vuex";
 import LogoPrincipal from "~/components/logoPrincipal";
-import FormPedido from "~/components/formPedido";
+import formulario from "~/components/formulario";
 
 export default {
   
