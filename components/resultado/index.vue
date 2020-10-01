@@ -4,7 +4,7 @@
     <form class="container--form"  v-on:submit.prevent >
         <div class="d-fluid row head paddingMargin justify-content-between">
             <div class="col-xl-12">
-                <span class="head--span">Olá {{nome}}, juntando {{mensalidade|currency}} todo mês, você terá {{resultado|currency}} em {{contribuicao/12}} anos</span>
+                <span class="head--span">Olá {{nome}}, juntando <span class="nowrap">{{mensalidade|currency}}</span> todo mês, você terá <span class="nowrap">{{resultado|currency}}</span> em {{ajusteAno()}}</span>
             </div>          
         </div>
         
@@ -44,6 +44,10 @@ export default {
         }),
         reiniciar(){
             this.clearData()
+        },
+        ajusteAno(){
+            let ss = this.contribuicao/12 > 1 ? 's' : '';
+            return `${this.contribuicao/12} ano${ss}`
         }
     },
     computed: {        
