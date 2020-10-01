@@ -1,5 +1,13 @@
+const path = require("path");
+
+require("dotenv").config({
+  path: path.resolve(process.cwd(), `.env.${process.env.NODE_ENV}`),
+});
+
+const env = require("./env");
 
 export default {
+  env,
   components: true,
   /*
   ** Nuxt rendering mode
@@ -69,5 +77,5 @@ export default {
   },
   styleResources: {
     scss: ['~/assets/css/main.scss']
-  },
+  }
 }

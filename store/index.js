@@ -5,7 +5,7 @@ import State from "./state";
 import VuexPersistence from "vuex-persist";
 
 const vuexLocal = new VuexPersistence({
-  key: 'frontChallenge',
+  key: 'ciclic',
   storage: window.localStorage
 });
 

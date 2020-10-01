@@ -1,6 +1,7 @@
 <template>
     <div>
-    <form class="container--form"  v-on:submit.prevent >
+    <!-- <pre>{{`${process.env.JUROS}---teste`}}</pre> -->
+    <form class="container--form"  v-on:submit.prevent>
         <div class="d-fluid row head paddingMargin justify-content-between">
             <div class="col-xl-12">
                 <span class="head--span">Simulador</span>
@@ -16,7 +17,7 @@
                     <money v-model.trim="$v.mensalidade.$model" name="mensalidade" class="input inputText upLevel" v-bind="money" :class="{ 'form-group--error': enableCpPrice }"></money>
                 </div>
                 <div class="col-xl-12">
-                    <label for="contribuicao" class="label">Contribuição</label>
+                    <label for="contribuicao" class="label">Tempo de contribuição</label>
                     <select name="contribuicao" v-model.trim="$v.contribuicao.$model" class="input inputText upLevel" >
                         <option value="1">1 ano</option>
                         <option value="2">2 anos</option>
@@ -47,6 +48,7 @@ export default {
     name: "formulario",
     data () {
       return {
+        juros: 0.00517,
         contribuicao: 0,        
         nome: '',
         mensalidade:  0.00,
@@ -63,10 +65,10 @@ export default {
     components: {
       Money
     },
+    created(){
+      this.clearData();  
+    },
     computed: {        
-        ...mapState({
-            listagem: state => state.listagem
-        }),
         enableCpPrice(){
             if(this.$v.mensalidade.$model != 0) {
                 this.$v.mensalidade.$touch();
@@ -75,20 +77,20 @@ export default {
     },
     methods:{
         ...mapActions({
-            insertItem: "insertItem"
+            postExpression: "postExpression",
+            clearData: "clearData"
         }),
         simular(){
             if(this.$v.$invalid) { return }
             let objc = {
                 mensalidade: this.mensalidade,
                 nome: this.nome,
-                contribuicao:  this.contribuicao
+                contribuicao:  this.contribuicao * 12,
+                juros: this.juros
             }
-            this.saveData(objc);
+            this.postExpression(objc);
         },
-        saveData(){
-            console.log(this.contribuicao)
-        }
+
     },
     validations: {
         nome: {

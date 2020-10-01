@@ -1,13 +1,8 @@
 
 export default () => ({
-  listagem: [
-    {
-      price: 0,
-      files: [],
-      title: null,
-      flavor:  null,
-      type: false,
-      description:  null
-      }
-  ]
+    mensalidade: 0,
+    contribuicao: 0,
+    nome: "",    
+    juros: 0,
+    resultado: 0
 });
