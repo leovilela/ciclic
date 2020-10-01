@@ -1,6 +1,5 @@
 <template>
     <div>
-    <!-- <pre>{{`${process.env.JUROS}---teste`}}</pre> -->
     <form class="container--form"  v-on:submit.prevent>
         <div class="d-fluid row head paddingMargin justify-content-between">
             <div class="col-xl-12">

@@ -30,6 +30,7 @@
         @include box-shadow(11px, 11px, 29px, -6px,rgba(0,0,0,0.61));
         padding: 10px;
         margin: 0 10px;
+        max-width: 640px;
       }
     }
 
@@ -66,8 +67,7 @@
   
     .formulario{
       display: inline-block;
-      max-width: 790px;
-      width: 100%;
+      
       position: relative;
     }
     .label{
