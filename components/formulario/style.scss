@@ -1,0 +1,90 @@
+  .head{
+    &--span{
+      font-weight: 700;
+      font-size: 1.8rem;
+    }
+  }
+  .justify-content-right {
+    text-align: right;
+    align-content: flex-end;
+  }
+  
+  .typePadding {
+    padding: 3px 0 0 0
+  }
+  
+  .boxFlex{
+    display: flex;
+    justify-content: center;
+  }
+  
+    .container {
+      &--type {
+        display: flex; 
+        margin-top: 5px;
+        float: right;
+      }
+      &--form {
+        overflow: hidden;
+        @include border-radius(15px);
+        @include box-shadow(11px, 11px, 29px, -6px,rgba(0,0,0,0.61));
+        padding: 10px;
+        margin: 0 10px;
+        max-width: 640px;
+      }
+    }
+
+    .panel{
+        &--buttons{
+           position: relative;
+        }
+        &--btn{
+            margin-top: -28px;
+            
+            &-cancel{
+                width: 168px;                
+                margin: 0 15px;
+                font-family: 'roboto';
+                font-weight: 900 !important;
+            }
+            &-submit{
+                width: 168px;                
+                margin: 0 15px;
+                font-family: 'roboto';                
+                font-weight: 900 !important;
+                padding: 14px!important;
+                color: #fff;
+                background-color:  #ff3796;
+                outline: none;
+            }
+            &-disabled{
+              opacity: 0.5;
+            }
+        }
+    }
+  
+  
+  
+    .formulario{
+      display: inline-block;
+      
+      position: relative;
+    }
+    .label{
+      width: 180px;
+    }
+    .input{
+      width: calc(100% - 190px) !important;
+    }
+    .bgWhite{
+        background-color: $white;
+    }
+    .upLevel{
+      position:relative;
+      z-index:10
+    }
+    
+    .paddingMargin {
+      padding-right: 16px;
+      padding-left: 16px;
+    }

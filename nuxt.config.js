@@ -1,5 +1,5 @@
-
 export default {
+  ssr: false,
   components: true,
   /*
   ** Nuxt rendering mode
@@ -11,14 +11,14 @@ export default {
   ** See https://nuxtjs.org/api/configuration-head
   */
   head: {
-    title: "Pastel de Idéias",
+    title: "Ciclic",
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' }
     ]
   },
   /*
@@ -40,9 +40,6 @@ export default {
     '~/plugins/v-money.js',
     '~/plugins/vue-the-mask.js',
     '~/plugins/vuelidate.js',
-    "~/plugins/sweetAlert",
-    '~/plugins/services.js',
-    '~/plugins/vue-upload.js',
     { src: '~/plugins/vuex-persist', ssr: false }
   ],
   /*
@@ -72,5 +69,5 @@ export default {
   },
   styleResources: {
     scss: ['~/assets/css/main.scss']
-  },
+  }
 }
